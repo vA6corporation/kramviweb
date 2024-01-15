@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from '../header/header.component';
+import { HeroComponent } from '../hero/hero.component';
+import { BenefitsComponent } from '../benefits/benefits.component';
+import { PlansComponent } from '../plans/plans.component';
+import { ClientsComponent } from '../clients/clients.component';
+import { EquipmentComponent } from '../equipment/equipment.component';
+import { ContactComponent } from '../contact/contact.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, HeaderComponent, HeroComponent, BenefitsComponent, PlansComponent, ClientsComponent, ContactComponent, FooterComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.sass'
 })

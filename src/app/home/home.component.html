@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+<!-- <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
     <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none">
         <img src="assets/kramviLogo.svg" alt="playstore" width="40" class="me-3">
         <span class="fs-4">Kramvi: Facturacion y Venta</span>
@@ -14,122 +14,174 @@
             href="https://web.whatsapp.com/send?phone=51977902392&text=Hola quiero contratar Kramvi">Contactanos</a>
         }
     </nav>
-</div>
+</div> -->
 
-<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+<div class="">
+  <app-header />
+  <app-hero />
+  <app-benefits />
+  <app-plans />
+  <app-clients />
+  <app-contact />
+  <app-footer />
+
+  <!-- <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
     <h1 class="display-4 fw-normal text-body-emphasis">Precios</h1>
     <p class="fs-5 text-body-secondary">
-        Tenemos los mejores planes a la medida de su empresa.
+      Tenemos los mejores planes a la medida de su empresa.
     </p>
-</div>
+  </div>
 
-<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
     <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Plan Emprendedor</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                    S/ {{ ((priceStandar * quantityBasic) - 1) - (discountBasic * (quantityBasic - 1)) }}
-                    <small class="text-body-secondary fw-light">/me</small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    @for (item of basic; track item) {
-                    <li>{{ item }}</li>
-                    }
-                </ul>
-                <div class="form-floating mb-2">
-                    <select class="form-select" [(ngModel)]="quantityBasic" aria-label="Floating label select example">
-                        <option value="1">1 sucursal</option>
-                        <option value="2">2 sucursales</option>
-                        <option value="3">3 sucursales</option>
-                        <option value="4">4 sucursales</option>
-                        <option value="5">5 sucursales</option>
-                    </select>
-                    <label for="floatingSelect">Sucursales</label>
-                </div>
-                @if (isMobile()) {
-                <a target="_blank" href="whatsapp://send?phone=+51977902392&text=Hola quiero contratar Kramvi"
-                    class="w-100 btn btn-lg btn-primary">Contactanos</a>
-                } @else {
-                <a target="_blank"
-                    href="https://web.whatsapp.com/send?phone=51977902392&text=Hola quiero contratar Kramvi"
-                    class="w-100 btn btn-lg btn-primary">Contactanos</a>
-                }
-            </div>
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Plan Emprendedor</h4>
         </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">
+            S/
+            {{
+              priceStandar * quantityBasic -
+                1 -
+                discountBasic * (quantityBasic - 1)
+            }}
+            <small class="text-body-secondary fw-light">/me</small>
+          </h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            @for (item of basic; track item) {
+            <li>{{ item }}</li>
+            }
+          </ul>
+          <div class="form-floating mb-2">
+            <select
+              class="form-select"
+              [(ngModel)]="quantityBasic"
+              aria-label="Floating label select example"
+            >
+              <option value="1">1 sucursal</option>
+              <option value="2">2 sucursales</option>
+              <option value="3">3 sucursales</option>
+              <option value="4">4 sucursales</option>
+              <option value="5">5 sucursales</option>
+            </select>
+            <label for="floatingSelect">Sucursales</label>
+          </div>
+          @if (isMobile()) {
+          <a
+            target="_blank"
+            href="whatsapp://send?phone=+51977902392&text=Hola quiero contratar Kramvi"
+            class="w-100 btn btn-lg btn-primary"
+            >Contactanos</a
+          >
+          } @else {
+          <a
+            target="_blank"
+            href="https://web.whatsapp.com/send?phone=51977902392&text=Hola quiero contratar Kramvi"
+            class="w-100 btn btn-lg btn-primary"
+            >Contactanos</a
+          >
+          }
+        </div>
+      </div>
     </div>
     <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Plan Empresas</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                    S/ {{ ((priceEnterprice * quantityPro)-1) - (discount * (quantityPro - 1)) }}
-                    <small class="text-body-secondary fw-light">/me</small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    @for (item of standar; track item) {
-                    <li>{{ item }}</li>
-                    }
-                </ul>
-                <div class="form-floating mb-2">
-                    <select class="form-select" [(ngModel)]="quantityPro"
-                        aria-label="Floating label select example">
-                        <option value="1">1 sucursal</option>
-                        <option value="2">2 sucursales</option>
-                        <option value="3">3 sucursales</option>
-                        <option value="4">4 sucursales</option>
-                        <option value="5">5 sucursales</option>
-                    </select>
-                    <label for="floatingSelect">Sucursales</label>
-                </div>
-                @if (isMobile()) {
-                <a href="whatsapp://send?phone=+51977902392&text=Hola quiero contratar Kramvi"
-                    class="w-100 btn btn-lg btn-primary">Contactanos</a>
-                } @else {
-                <a href="https://web.whatsapp.com/send?phone=51977902392&text=Hola quiero contratar Kramvi"
-                    class="w-100 btn btn-lg btn-primary">Contactanos</a>
-                }
-            </div>
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Plan Empresas</h4>
         </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">
+            S/
+            {{
+              priceEnterprice * quantityPro - 1 - discount * (quantityPro - 1)
+            }}
+            <small class="text-body-secondary fw-light">/me</small>
+          </h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            @for (item of standar; track item) {
+            <li>{{ item }}</li>
+            }
+          </ul>
+          <div class="form-floating mb-2">
+            <select
+              class="form-select"
+              [(ngModel)]="quantityPro"
+              aria-label="Floating label select example"
+            >
+              <option value="1">1 sucursal</option>
+              <option value="2">2 sucursales</option>
+              <option value="3">3 sucursales</option>
+              <option value="4">4 sucursales</option>
+              <option value="5">5 sucursales</option>
+            </select>
+            <label for="floatingSelect">Sucursales</label>
+          </div>
+          @if (isMobile()) {
+          <a
+            href="whatsapp://send?phone=+51977902392&text=Hola quiero contratar Kramvi"
+            class="w-100 btn btn-lg btn-primary"
+            >Contactanos</a
+          >
+          } @else {
+          <a
+            href="https://web.whatsapp.com/send?phone=51977902392&text=Hola quiero contratar Kramvi"
+            class="w-100 btn btn-lg btn-primary"
+            >Contactanos</a
+          >
+          }
+        </div>
+      </div>
     </div>
     <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Plan Ecommerce</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">{{ ((priceBusiness * quantityEcommerce)-1) - (discountBusiness *
-                    (quantityEcommerce - 1)) }}
-                    <small class="text-body-secondary fw-light">/me</small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    @for (item of enterprice; track item) {
-                    <li>{{ item }}</li>
-                    }
-                </ul>
-                <div class="form-floating mb-2">
-                    <select class="form-select" [(ngModel)]="quantityEcommerce"
-                        aria-label="Floating label select example">
-                        <option value="1">1 sucursal</option>
-                        <option value="2">2 sucursales</option>
-                        <option value="3">3 sucursales</option>
-                        <option value="4">4 sucursales</option>
-                        <option value="5">5 sucursales</option>
-                    </select>
-                    <label for="floatingSelect">Sucursales</label>
-                </div>
-                @if (isMobile()) {
-                <a href="whatsapp://send?phone=+51977902392&text=Hola quiero contratar Kramvi"
-                    class="w-100 btn btn-lg btn-primary">Contactanos</a>
-                } @else {
-                <a href="https://web.whatsapp.com/send?phone=51977902392&text=Hola quiero contratar Kramvi"
-                    class="w-100 btn btn-lg btn-primary">Contactanos</a>
-                }
-            </div>
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Plan Ecommerce</h4>
         </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">
+            {{
+              priceBusiness * quantityEcommerce -
+                1 -
+                discountBusiness * (quantityEcommerce - 1)
+            }}
+            <small class="text-body-secondary fw-light">/me</small>
+          </h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            @for (item of enterprice; track item) {
+            <li>{{ item }}</li>
+            }
+          </ul>
+          <div class="form-floating mb-2">
+            <select
+              class="form-select"
+              [(ngModel)]="quantityEcommerce"
+              aria-label="Floating label select example"
+            >
+              <option value="1">1 sucursal</option>
+              <option value="2">2 sucursales</option>
+              <option value="3">3 sucursales</option>
+              <option value="4">4 sucursales</option>
+              <option value="5">5 sucursales</option>
+            </select>
+            <label for="floatingSelect">Sucursales</label>
+          </div>
+          @if (isMobile()) {
+          <a
+            href="whatsapp://send?phone=+51977902392&text=Hola quiero contratar Kramvi"
+            class="w-100 btn btn-lg btn-primary"
+            >Contactanos</a
+          >
+          } @else {
+          <a
+            href="https://web.whatsapp.com/send?phone=51977902392&text=Hola quiero contratar Kramvi"
+            class="w-100 btn btn-lg btn-primary"
+            >Contactanos</a
+          >
+          }
+        </div>
+      </div>
     </div>
+  </div>
+</div> -->
 </div>

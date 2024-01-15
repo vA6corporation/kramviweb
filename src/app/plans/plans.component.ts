@@ -1,13 +1,26 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-plans',
-  standalone: true,
-  imports: [],
-  templateUrl: './plans.component.html',
-  styleUrl: './plans.component.sass'
+    selector: 'app-plans',
+    standalone: true,
+    imports: [FormsModule, RouterModule],
+    templateUrl: './plans.component.html',
+    styleUrl: './plans.component.sass'
 })
 export class PlansComponent {
+
+
+    discount = 50
+    discountBasic = 10
+    discountBusiness = 100
+    quantityBasic = 1
+    quantityPro = 1
+    quantityEcommerce = 1
+    priceStandar = 50
+    priceEnterprice = 100
+    priceBusiness = 150
 
 
     isMobile() {

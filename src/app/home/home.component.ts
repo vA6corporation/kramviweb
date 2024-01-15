@@ -6,7 +6,6 @@ import { HeroComponent } from '../hero/hero.component';
 import { BenefitsComponent } from '../benefits/benefits.component';
 import { PlansComponent } from '../plans/plans.component';
 import { ClientsComponent } from '../clients/clients.component';
-import { EquipmentComponent } from '../equipment/equipment.component';
 import { ContactComponent } from '../contact/contact.component';
 import { FooterComponent } from '../footer/footer.component';
 
